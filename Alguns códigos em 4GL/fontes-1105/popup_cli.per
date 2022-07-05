@@ -1,0 +1,36 @@
+DATABASE LOGIX
+
+SCREEN
+{   
+       Auxiliar: [f002           ]                          
+  Nome Auxiliar: [f003                                     ]
+---------------------------------------------------------------
+ Cliente          Nome Cliente                
+[f000           ][f001                                     ]
+[f000           ][f001                                     ]
+[f000           ][f001                                     ]
+[f000           ][f001                                     ]
+[f000           ][f001                                     ]
+[f000           ][f001                                     ]
+[f000           ][f001                                     ]
+[f000           ][f001                                     ]
+[f000           ][f001                                     ]
+[f000           ][f001                                     ]
+
+
+}
+END
+
+TABLES
+empresa
+clientes
+
+ATTRIBUTES
+f000 = cdv_fornecedor_fun.cod_funcio, UPSHIFT;
+f001 = fornecedor.raz_social, UPSHIFT;
+f002 = FORMONLY.auxiliar, UPSHIFT;
+f003 = FORMONLY.nome_auxiliar, UPSHIFT;
+
+INSTRUCTIONS
+  SCREEN RECORD sr_cliente[10](cdv_fornecedor_fun.cod_funcio, fornecedor.raz_social);
+END

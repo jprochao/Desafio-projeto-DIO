@@ -1,0 +1,61 @@
+database logix 
+screen
+{
+-------------------------------------------------------------------------------
+                         APONTAMENTO DE HORAS TECNICA
+						
+        Empresa: [f0]
+  Numero Viagem: [f000  ]
+      Motorista: [f001           ] [f002                                     ] 
+Cliente Destino: [f003           ] [f004                                     ]                            
+        Veiculo: [f005                 ]                 Placa: [f006        ]  
+       KM Saida: [f007        ]                     KM Chegada: [f008        ]
+       Auxiliar: [f009           ] [f099                                     ]   
+       
+ ------------------------------------------------------------------------------
+                       Manhã                Tarde                 Extra
+  Data Serviço   Inicio     Fim        Inicio     Fim        Inicio     Fim
+ ------------------------------------------------------------------------------
+ [f010       ]  [f011 ]    [f012 ]    [f013 ]    [f014 ]    [f015 ]    [f016 ]       
+ [f010       ]  [f011 ]    [f012 ]    [f013 ]    [f014 ]    [f015 ]    [f016 ]
+ [f010       ]  [f011 ]    [f012 ]    [f013 ]    [f014 ]    [f015 ]    [f016 ]
+ [f010       ]  [f011 ]    [f012 ]    [f013 ]    [f014 ]    [f015 ]    [f016 ]
+ [f010       ]  [f011 ]    [f012 ]    [f013 ]    [f014 ]    [f015 ]    [f016 ]         
+}						
+  
+Tables
+cdv_solic_viagem  
+apo_hr_tec_van
+
+attributes
+f0   = formonly.empresa, reverse;
+f000 = formonly.num_viagem type char;
+f001 = formonly.matricula_viajante type char, widget="field_bmp", config="combo.bmp Control-z";
+f002 = formonly.viajante type like fornecedor.raz_social, noentry;
+f003 = formonly.cliente_destino type char, widget="field_bmp", config="combo.bmp Control-z";
+f004 = formonly.cliente type like clientes.nom_cliente, noentry;
+f005 = formonly.veiculo type char, upshift; 
+f006 = formonly.placa type char, upshift;
+f007 = formonly.km_saida type char; 
+f008 = formonly.km_chegada type char;
+f009 = formonly.mat_aux type char, widget="field_bmp", config="combo.bmp Control-z";
+f099 = formonly.auxiliar type char, upshift;
+f010 = formonly.dat_servico, upshift, format="dd/mm/yyyy";
+f011 = formonly.hr_ini_man, upshift, picture="##:##";
+f012 = formonly.hr_fin_man, upshift, picture="##:##"; 
+f013 = formonly.hr_ini_tar, upshift, picture="##:##";
+f014 = formonly.hr_fin_tar, upshift, picture="##:##";
+f015 = formonly.hr_ini_ext, upshift, picture="##:##";
+f016 = formonly.hr_fin_ext, upshift, picture="##:##";
+end
+
+instructions
+	screen record sr_array[5] (dat_servico, 
+							   hr_ini_man, 
+							   hr_fin_man, 
+							   hr_ini_tar, 
+							   hr_fin_tar, 
+							   hr_ini_ext, 
+							   hr_fin_ext)
+	end	
+						

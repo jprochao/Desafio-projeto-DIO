@@ -1,0 +1,36 @@
+database logix 
+screen
+{
+-------------------------------------------------------------------------------
+                         PARAMETROS RELATORIO HORAS TECNICAS
+						                     
+						
+                         Empresa: [f0]
+              Matricula Viajante: [matr      ]    
+                     Data inicio: [f000      ]
+                      Data final: [f001      ]  
+
+
+
+
+
+
+   
+
+
+
+
+					         
+}						
+  
+Tables
+cdv_solic_viagem  
+apo_hr_tec_van
+
+attributes
+f0   = formonly.empresa, reverse;
+matr = formonly.mviajante, comments="Deixe em branco para selecionar todas."; 
+f000 = formonly.dat_ini, upshift, autonext, format="dd/mm/yyyy";
+f001 = formonly.dat_fim, upshift, autonext, format="dd/mm/yyyy";
+end
+						

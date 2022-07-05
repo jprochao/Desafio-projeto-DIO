@@ -1,0 +1,404 @@
+object DM: TDM
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 416
+  HorizontalOffset = 765
+  VerticalOffset = 203
+  Width = 441
+  object SQLQPDCA: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'NUM_PROJETO'
+        DataType = ftFMTBcd
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'NOM_PROJETO'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'USUARIO_RESP'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'AREA'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'DAT_INCLUSAO'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'DAT_REVISAO'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'SEQ_ITEM'
+        DataType = ftFMTBcd
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'FOCO_OQUE'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'MOTIVO_POR_QUE'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'RESP_QUEM'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'PRAZO_QUANDO'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'LOCAL_ONDE'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'ACOES_COMO'
+        DataType = ftString
+        Precision = -1
+        Size = 500
+      end    
+      item
+        Name = 'VALORES_QUANTO'
+        DataType = ftFMTBcd
+        Precision = -1
+        Size = 5
+      end    
+      item
+        Name = 'GANHOS_ESTIMADO'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'AVALIACAO25'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'AVALIACAO50'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'AVALIACAO75'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'AVALIACAO100'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'ANEXO'
+        DataType = ftString
+        Precision = -1
+        Size = 500
+      end>
+    Database = logix11
+    Transaction = SQLTrans
+    SQL.Strings = (
+      'select * from pdca_van'
+    )
+    Params = <>
+    left = 24
+    top = 104
+  end
+  object SQLTrans: TSQLTransaction
+    Active = False
+    Database = logix11
+    left = 192
+    top = 32
+  end
+  object DSPDCA: TDataSource
+    DataSet = SQLQPDCA
+    left = 24
+    top = 184
+  end
+  object SQLQCC: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_EMPRESA'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'COD_CENT_CUST'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'IES_COD_VERSAO'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'NOM_CENT_CUST'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'COD_DEPART'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'COD_GEREN'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'COD_SUPERINT'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'COD_SETOR'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'DAT_INI_PREV'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'DAT_FIM_PREV'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'DAT_ENC'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'NUM_CONTA_CONTAB'
+        DataType = ftString
+        Precision = -1
+        Size = 23
+      end    
+      item
+        Name = 'IES_LANC_MOBRA'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'IES_LANC_MATER'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'IES_ACELERADO'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'IES_SALDO_FECHA'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'IES_TIPO_CC'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'IES_SITUA'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end>
+    Database = logix11
+    Transaction = SQLTrans
+    SQL.Strings = (
+      'select * from CAD_CC'
+    )
+    Params = <>
+    left = 112
+    top = 104
+  end
+  object DSCC: TDataSource
+    left = 112
+    top = 184
+  end
+  object logix11: TODBCConnection
+    Connected = False
+    LoginPrompt = False
+    AfterConnect = logix11AfterConnect
+    DatabaseName = 'logix'
+    KeepConnection = False
+    Password = 'vantec123'
+    Transaction = SQLTrans
+    UserName = 'informix'
+    CharSet = 'en_us.8859-1'
+    HostName = '192.168.0.3'
+    LogEvents = []
+    Driver = 'Informix 3.50'
+    FileDSN = 'logixtst2soc'
+    left = 24
+    top = 32
+  end
+  object SQLQLOGIN: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'USUARIO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'SENHA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 8
+      end>
+    Database = logix11
+    Transaction = SQLTrans
+    SQL.Strings = (
+      'select * from login_van'
+    )
+    Params = <>
+    left = 200
+    top = 104
+  end
+  object SQLQUSER: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_USUARIO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'SENHA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 24
+      end>
+    Database = logix11
+    Transaction = SQLTrans
+    SQL.Strings = (
+      'select * from usuario_senha'
+    )
+    Params = <>
+    left = 296
+    top = 104
+  end
+  object DSLOGIN: TDataSource
+    DataSet = SQLQLOGIN
+    left = 200
+    top = 184
+  end
+  object SQLQCARR: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'NUM_PROJETO'
+        DataType = ftFloat
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'NOM_PROJETO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 100
+      end>
+    Database = logix11
+    Transaction = SQLTrans
+    SQL.Strings = (
+      'select num_projeto, nom_projeto from pdca_van'
+    )
+    Params = <>
+    left = 384
+    top = 104
+  end
+  object SQLQSEQ: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MAX(SEQ_ITEM)'
+        DataType = ftFloat
+        Precision = -1
+        Size = 0
+      end>
+    Database = logix11
+    Transaction = SQLTrans
+    SQL.Strings = (
+      'select max(seq_item) from pdca_van'
+    )
+    Params = <>
+    left = 24
+    top = 256
+  end
+  object SQLQPASSWD: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_USUARIO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'SENHA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 24
+      end>
+    Database = logix11
+    Transaction = SQLTrans
+    SQL.Strings = (
+      'select * from usuario_senha'
+    )
+    Params = <>
+    left = 112
+    top = 256
+  end
+end

@@ -1,0 +1,86 @@
+object FLogar: TFLogar
+  Left = 572
+  Height = 415
+  Top = 219
+  Width = 254
+  BorderIcons = [biMinimize, biMaximize]
+  Caption = 'Logar'
+  ClientHeight = 415
+  ClientWidth = 254
+  OnShow = FormShow
+  LCLVersion = '1.6.0.4'
+  object btentrar: TButton
+    Left = 80
+    Height = 25
+    Top = 128
+    Width = 80
+    Caption = 'Entrar'
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 24
+    Height = 170
+    Top = 200
+    Width = 194
+    Caption = 'Panel1'
+    ClientHeight = 170
+    ClientWidth = 194
+    TabOrder = 1
+    Visible = False
+    OnClick = Panel1Click
+    object enovasenha: TLabeledEdit
+      Left = 56
+      Height = 28
+      Top = 43
+      Width = 80
+      EditLabel.AnchorSideLeft.Control = enovasenha
+      EditLabel.AnchorSideRight.Control = enovasenha
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = enovasenha
+      EditLabel.Left = 56
+      EditLabel.Height = 20
+      EditLabel.Top = 20
+      EditLabel.Width = 80
+      EditLabel.Caption = 'Nova Senha'
+      EditLabel.ParentColor = False
+      MaxLength = 8
+      TabOrder = 0
+      Text = 'enovasen'
+      OnExit = enovasenhaExit
+    end
+    object btnovasenha: TButton
+      Left = 56
+      Height = 25
+      Top = 80
+      Width = 80
+      Caption = 'Salvar'
+      OnClick = btnovasenhaClick
+      TabOrder = 1
+    end
+  end
+  object euser: TEdit
+    Left = 80
+    Height = 28
+    Top = 39
+    Width = 80
+    MaxLength = 8
+    OnExit = euserExit
+    TabOrder = 2
+  end
+  object esenha: TEdit
+    Left = 80
+    Height = 28
+    Top = 88
+    Width = 80
+    TabOrder = 3
+  end
+  object btsair: TButton
+    Left = 80
+    Height = 25
+    Top = 160
+    Width = 80
+    Caption = 'Sair'
+    OnClick = btsairClick
+    TabOrder = 4
+  end
+end

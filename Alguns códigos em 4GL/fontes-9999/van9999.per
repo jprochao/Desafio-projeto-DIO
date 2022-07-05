@@ -1,0 +1,51 @@
+database logix 
+screen
+{
+------------------------------------------------------------------------------
+[f0]                     ABERTURA CHAMADO INTERNO (TI)
+                             
+ Número Chamado: [f000    ]     Situação: [s][dsit      ]
+ Usuario Solic.: [f001    ] Setor Solic.: [set                           ]
+    Data Abert.: [f002      ][f003 ]  Encerr.: [f004      ][f005 ] 
+ Setor/Processo: [f006                ] [f007                ]
+         Resumo: [f008                ]                 
+      Atendente: [f009                           ]                     
+------------------------------------------------------------------------------
+ Descrição Serviço:
+[f010                                                                      ] 
+[f010                                                                      ]
+[f010                                                                      ]
+[f010                                                                      ]
+[f010                                                                      ]   
+[f010                                                                      ] 
+[f010                                                                      ]
+[f010                                                                      ]
+[f010                                                                      ]
+[f010                                                                      ]
+}						
+  
+Tables
+empresa
+
+attributes
+f0   = formonly.empresa, noentry;
+f000 = formonly.chamado, noentry;
+s    = formonly.status, upshift, noentry;
+dsit = formonly.den_sit, noentry;
+f001 = formonly.usuario;
+set  = formonly.setor, UPSHIFT, WIDGET="FIELD_BMP", CONFIG="combo.bmp Control-z";
+f002 = formonly.dat_abert, format = "dd/mm/yyyy", noentry;
+f003 = formonly.hor_abert, PICTURE='##:##', noentry;
+f004 = formonly.dat_encerr, format = "dd/mm/yyyy", noentry; 
+f005 = formonly.hor_encerr, PICTURE='##:##', noentry;
+f006 = formonly.area, UPSHIFT, WIDGET="FIELD_BMP", CONFIG="combo.bmp Control-z";
+f007 = formonly.problema, UPSHIFT, WIDGET="FIELD_BMP", CONFIG="combo.bmp Control-z";  
+f008 = formonly.defeito, UPSHIFT;  
+f009 = formonly.atendente, noentry; 
+f010 = formonly.descr_def;
+end
+
+instructions
+	screen record sr_descr_def[10] (descr_def)
+	end	
+						

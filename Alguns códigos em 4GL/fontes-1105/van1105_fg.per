@@ -1,0 +1,28 @@
+database logix 
+screen
+{
+		HORAS FOLGADAS   
+       
+ -------------------------------
+  Data folga     Horas folgadas 
+ -------------------------------
+ [f010       ]  [f011 ]          
+ [f010       ]  [f011 ]
+ [f010       ]  [f011 ]
+ [f010       ]  [f011 ]
+ [f010       ]  [f011 ]
+}						
+  
+Tables
+empresa
+
+attributes
+
+f010 = formonly.dat_folga, upshift, format="dd/mm/yyyy";
+f011 = formonly.hrs_folga, upshift, picture="##:##";
+end
+
+instructions
+	screen record sr_folga[5] (dat_folga, hrs_folga)
+	end	
+						

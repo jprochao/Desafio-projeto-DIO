@@ -1,0 +1,25 @@
+DATABASE LOGIX
+
+SCREEN
+{
+-------------------------------------------
+[f001               ][f002              ]
+[f001               ][f002              ]
+[f001               ][f002              ]
+[f001               ][f002              ]
+[f001               ][f002              ]
+
+}
+
+END
+
+TABLES
+empresa
+
+ATTRIBUTES
+f001 = FORMONLY.area, UPSHIFT; 
+f002 = FORMONLY.problema, UPSHIFT; 
+
+INSTRUCTIONS
+  SCREEN RECORD sr_problema[5](area, problema);
+END

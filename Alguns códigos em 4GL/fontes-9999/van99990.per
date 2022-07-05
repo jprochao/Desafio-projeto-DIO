@@ -1,0 +1,29 @@
+DATABASE LOGIX
+
+SCREEN
+{
+----------------------------------------------
+[f001    ][f002                            ]
+[f001    ][f002                            ]
+[f001    ][f002                            ]
+[f001    ][f002                            ]
+[f001    ][f002                            ]
+[f001    ][f002                            ]
+[f001    ][f002                            ]
+[f001    ][f002                            ]
+[f001    ][f002                            ]
+[f001    ][f002                            ]
+}
+
+END
+
+TABLES
+empresa
+
+ATTRIBUTES
+f001 = FORMONLY.usuario; 
+f002 = formonly.nome;
+
+INSTRUCTIONS
+  SCREEN RECORD sr_user[10](usuario,nome);
+END

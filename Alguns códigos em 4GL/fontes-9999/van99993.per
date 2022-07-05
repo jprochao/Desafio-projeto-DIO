@@ -1,0 +1,27 @@
+DATABASE LOGIX
+
+SCREEN
+{
+[f001                                  ]
+[f001                                  ]
+[f001                                  ]
+[f001                                  ]
+[f001                                  ]
+[f001                                  ]
+[f001                                  ]
+[f001                                  ]
+[f001                                  ]
+[f001                                  ]
+}
+
+END
+
+TABLES
+empresa
+
+ATTRIBUTES
+f001 = FORMONLY.setor, UPSHIFT; 
+
+INSTRUCTIONS
+  SCREEN RECORD sr_setor[10](setor);
+END

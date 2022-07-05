@@ -1,0 +1,26 @@
+DATABASE LOGIX
+
+SCREEN
+{
+-------------------------------------------------------------------------------
+
+  Digite caminho do anexo. Diretorio padrão C:\Temp\arquivo.ext
+ [f001                                                                     ] 
+ [f001                                                                     ] 
+ [f001                                                                     ] 
+ [f001                                                                     ] 
+
+
+}
+
+END
+
+TABLES
+empresa
+
+ATTRIBUTES
+f001 = FORMONLY.anexo, WORDWRAP COMPRESS;
+
+{INSTRUCTIONS
+  SCREEN RECORD sr_setor[10](setor);
+END}
